@@ -47,24 +47,39 @@ namespace ZooPark.world
 
                 //compare list tye to class type
 
-                if (zoo[i].GetType() == typeof(Lion) || zoo[i].GetType() == typeof(Tiger) ||
-                    zoo[i].GetType() == typeof(Leopard) || zoo[i].GetType() == typeof(Giraffe)
-                    || zoo[i].GetType() == typeof(Sheep))
+                if (zoo[i].GetType() == typeof(Mammal))
                 {
                     numberOfMammals++;
                 }
 
-                else if (zoo[i].GetType() == typeof(Shark) || zoo[i].GetType() == typeof(Dolphin) ||
-                    zoo[i].GetType() == typeof(Aligator) || zoo[i].GetType() == typeof(Chameleon))
+                else if (zoo[i].GetType() == typeof(Reptiles))
                 {
                     numberOfReptiles++;
                 }
 
-                else if (zoo[i].GetType() == typeof(Parrot) || zoo[i].GetType() == typeof(Owl) ||
-                    zoo[i].GetType() == typeof(Penguin))
+                else if (zoo[i].GetType() == typeof(Reptiles))
                 {
                     numberOfBirds++;
                 }
+
+                //if (zoo[i].GetType() == typeof(Lion) || zoo[i].GetType() == typeof(Tiger) ||
+                //    zoo[i].GetType() == typeof(Leopard) || zoo[i].GetType() == typeof(Giraffe)
+                //    || zoo[i].GetType() == typeof(Sheep))
+                //{
+                //    numberOfMammals++;
+                //}
+
+                //else if (zoo[i].GetType() == typeof(Shark) || zoo[i].GetType() == typeof(Dolphin) ||
+                //    zoo[i].GetType() == typeof(Aligator) || zoo[i].GetType() == typeof(Chameleon))
+                //{
+                //    numberOfReptiles++;
+                //}
+
+                //else if (zoo[i].GetType() == typeof(Parrot) || zoo[i].GetType() == typeof(Owl) ||
+                //    zoo[i].GetType() == typeof(Penguin))
+                //{
+                //    numberOfBirds++;
+                //}
 
             }
 
@@ -148,7 +163,7 @@ namespace ZooPark.world
                 {
                     if (herbivoreAnimals.Count > 0)
                     {                     
-                        Console.Write("Carnivore are hunting and herbivore, do the ZOO still provide food: ");
+                        Console.Write("Carnivore are hunting herbivore, do the ZOO still provide food (Y/N): ");
                         string input1 = Console.ReadLine();
 
                         if (input1 == "Y" || input1 == "y")
@@ -160,33 +175,36 @@ namespace ZooPark.world
                         else if (input1 == "N" || input1 == "n")
                         {
                             herbivoreAnimals.RemoveAt(0);
+                            Console.WriteLine($"1 herbivore is killed and number of herbivor remained is : {herbivoreAnimals.Count}");
                         }
                     }
                     
                     else if (herbivoreAnimals.Count <= 0)
                     {
-                        Console.WriteLine("All herbivores are dead and carnivore animals are starving");
+                        Console.WriteLine("\nAll herbivores are dead and carnivore animals are starving");
 
                         Console.Write("\nAll herbivores are dead, do the ZOO still provide food (Y/N): ");
                         string input2 = Console.ReadLine();
 
                         if (input2 == "Y" || input2 == "y")
                         {
-                            Console.WriteLine("All carnivores are safe");
+                            Console.WriteLine("All carnivores are safe\n");
                             break;
                         }
 
                         if (input2 == "N" || input2 == "n")
                         {
-                            for (int a = 0; a < carnivoreAnimals.Count; a++)
-                            {
-                                carnivoreAnimals.RemoveAt(0);
-                            }
+                            //Console.WriteLine($"carnivore count is: {carnivoreAnimals.Count}");
 
-                            Console.WriteLine("All carnivores are starved and dead\n ");
+                            carnivoreAnimals.Clear();
+                            //for (int a = 0; a < carnivoreAnimals.Count; a++)
+                            //{
+                            //    carnivoreAnimals.RemoveAt(0);
+                            //}
+
+                            Console.WriteLine("All carnivores are starved and died\n ");
                         }
 
-                        
                     }
                 }
 
@@ -208,8 +226,8 @@ namespace ZooPark.world
 
                 //}
 
-                Console.WriteLine($"The final count of carnivore is {carnivoreAnimals.Count}");
-                Console.WriteLine($"The final count of herbivore is {herbivoreAnimals.Count}");
+                Console.WriteLine($"The final count of carnivore in ZOO is {carnivoreAnimals.Count}");
+                Console.WriteLine($"The final count of herbivore in ZOO is {herbivoreAnimals.Count}");
             }
 
             
