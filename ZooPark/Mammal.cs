@@ -6,33 +6,46 @@ namespace ZooPark
 {
     public class Mammal : Animal
     {
-        
+       
 
     }
 
-    public interface Icarnivore
-    {
-        void EatMeat();
-    }
+    //interface Icarnivore
+    //{
+    //    void EatMeat();
+    //}
 
-    public interface Iherbivore
-    {
-        void EatPlants();
-    }
+    //public interface Iherbivore
+    //{
+    //    float EatPlants();
+    //}
 
     public class Lion : Mammal
-    {
+    {      
+        
        public Lion()
         {
-            base.NumberOfLegs = 4;
+            TypeOfAnimal = AnimalType.carnivore;   
+            NumberOfLegs = 4;
         }
-        public Lion (string name,float height)
-        {
-            base.NumberOfLegs = 4;
-            base.Name = name;
-            base.AnimalHeight = height;
 
-            Console.WriteLine($"I am {base.Name} of type Mammal, I got {base.NumberOfLegs} legs and I'm {base.AnimalHeight} cms");
+        //this() will inherit the properties from the default constructor public Lion()
+
+        public Lion (string name,float height): this()
+        {
+            //base.TypeOfAnimal = AnimalType.carnivore;
+            //base.NumberOfLegs = 4;
+            Name = name;
+            AnimalHeight = height;
+
+            //Console.WriteLine($"I am {base.Name} of type Mammal, I got {base.NumberOfLegs} legs and I'm {base.AnimalHeight} cms");
+        }
+
+        //this("lion",20.5f) will inherit the properties from public Lion (string name,float height)
+
+        public Lion(int numberOfLegs) : this("lion",20.5f)
+        {
+
         }
 
     }
@@ -41,15 +54,17 @@ namespace ZooPark
     {
         public Tiger()
         {
+            base.TypeOfAnimal = AnimalType.carnivore;
             base.NumberOfLegs = 4;
         }
-        public Tiger(string name, float height)
+        public Tiger(string name, float height):this()
         {
-            base.NumberOfLegs = 4;
+            //base.TypeOfAnimal = AnimalType.carnivore;
+            //base.NumberOfLegs = 4;
             base.Name = name;
             base.AnimalHeight = height;
 
-            Console.WriteLine($"I am {base.Name} of type Mammal, I got {base.NumberOfLegs} legs and I'm {base.AnimalHeight} cms");
+           // Console.WriteLine($"I am {base.Name} of type Mammal, I got {base.NumberOfLegs} legs and I'm {base.AnimalHeight} cms");
         }
 
         public override void Eat()
@@ -63,20 +78,70 @@ namespace ZooPark
     {
         public Leopard()
         {
+            base.TypeOfAnimal = AnimalType.carnivore;
             base.NumberOfLegs = 4;
         }
         public Leopard(string name, float height)
         {
+            base.TypeOfAnimal = AnimalType.carnivore;
             base.NumberOfLegs = 4;
             base.Name = name;
             base.AnimalHeight = height;
 
-            Console.WriteLine($"I am {base.Name} of type Mammal, I got {base.NumberOfLegs} legs and I'm {base.AnimalHeight} cms");
+            //Console.WriteLine($"I am {base.Name} of type Mammal, I got {base.NumberOfLegs} legs and I'm {base.AnimalHeight} cms");
         }
 
         public override void Eat()
         {
             Console.WriteLine("I eat all other kind of animals\n");
+        }
+
+    }
+
+    public class Giraffe : Mammal
+    {
+        public Giraffe()
+        {
+            base.TypeOfAnimal = AnimalType.herbivore;
+            base.NumberOfLegs = 4;
+        }
+        public Giraffe(string name, float height)
+        {
+            base.TypeOfAnimal = AnimalType.carnivore;
+            base.NumberOfLegs = 4;
+            base.Name = name;
+            base.AnimalHeight = height;
+
+            //Console.WriteLine($"I am {base.Name} of type Mammal, I got {base.NumberOfLegs} legs and I'm {base.AnimalHeight} cms");
+        }
+
+        public override void Eat()
+        {
+            Console.WriteLine("I eat only grass\n");
+        }
+
+    }
+
+    public class Sheep : Mammal
+    {
+        public Sheep()
+        {
+            base.TypeOfAnimal = AnimalType.herbivore;
+            base.NumberOfLegs = 4;
+        }
+        public Sheep(string name, float height)
+        {
+            base.TypeOfAnimal = AnimalType.carnivore;
+            base.NumberOfLegs = 4;
+            base.Name = name;
+            base.AnimalHeight = height;
+
+            //Console.WriteLine($"I am {base.Name} of type Mammal, I got {base.NumberOfLegs} legs and I'm {base.AnimalHeight} cms");
+        }
+
+        public override void Eat()
+        {
+            Console.WriteLine("I eat only grass\n");
         }
 
     }

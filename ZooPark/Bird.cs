@@ -19,10 +19,12 @@ namespace ZooPark
     {
         public Owl()
         {
+            base.TypeOfAnimal = AnimalType.carnivore;
             base.NumberOfWings = 2;
         }
         public Owl(string name, float height)
         {
+            base.TypeOfAnimal = AnimalType.carnivore;
             base.NumberOfLegs = 4;
             base.Name = name;
             base.AnimalHeight = height;
@@ -40,10 +42,12 @@ namespace ZooPark
     {
         public Penguin()
         {
+            base.TypeOfAnimal = AnimalType.herbivore;
             base.NumberOfWings = 2;
         }
         public Penguin(string name, float height)
         {
+            base.TypeOfAnimal = AnimalType.herbivore;
             base.NumberOfLegs = 4;
             base.Name = name;
             base.AnimalHeight = height;
@@ -62,10 +66,12 @@ namespace ZooPark
 
         public Parrot()
         {
+            base.TypeOfAnimal = AnimalType.herbivore;
             base.NumberOfWings = 2;
         }
         public Parrot(string name, float height)
         {
+            base.TypeOfAnimal = AnimalType.herbivore;
             base.NumberOfLegs = 4;
             base.Name = name;
             base.AnimalHeight = height;

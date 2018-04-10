@@ -13,6 +13,7 @@ namespace ZooPark
     {
         public Shark()
         {
+            base.TypeOfAnimal = AnimalType.carnivore;
             base.NumberOfLegs = 0;
         }
         public Shark(string name, float height)
@@ -21,7 +22,7 @@ namespace ZooPark
             base.Name = name;
             base.AnimalHeight = height;
 
-            Console.WriteLine($"I am {base.Name} of type Mammal, I got {base.NumberOfLegs} legs and I'm {base.AnimalHeight} cms");
+            //Console.WriteLine($"I am {base.Name} of type Mammal, I got {base.NumberOfLegs} legs and I'm {base.AnimalHeight} cms");
         }
 
         public override void Eat()
@@ -35,6 +36,7 @@ namespace ZooPark
     {
         public Dolphin()
         {
+            base.TypeOfAnimal = AnimalType.herbivore;
             base.NumberOfLegs = 0;
         }
         public Dolphin(string name, float height)
@@ -43,7 +45,30 @@ namespace ZooPark
             base.Name = name;
             base.AnimalHeight = height;
 
-            Console.WriteLine($"I am {base.Name} of type Mammal, I got {base.NumberOfLegs} legs and I'm {base.AnimalHeight} cms");
+            //Console.WriteLine($"I am {base.Name} of type Mammal, I got {base.NumberOfLegs} legs and I'm {base.AnimalHeight} cms");
+        }
+
+        public override void Eat()
+        {
+            Console.WriteLine("I eat only algae not the fishes\n");
+        }
+
+    }
+
+    public class Chameleon : Reptiles
+    {
+        public Chameleon()
+        {
+            base.TypeOfAnimal = AnimalType.herbivore;
+            base.NumberOfLegs = 0;
+        }
+        public Chameleon(string name, float height)
+        {
+            base.NumberOfLegs = 0;
+            base.Name = name;
+            base.AnimalHeight = height;
+
+            //Console.WriteLine($"I am {base.Name} of type Mammal, I got {base.NumberOfLegs} legs and I'm {base.AnimalHeight} cms");
         }
 
         public override void Eat()
@@ -57,6 +82,7 @@ namespace ZooPark
     {
         public Aligator()
         {
+            base.TypeOfAnimal = AnimalType.carnivore;
             base.NumberOfLegs = 4;
         }
         public Aligator(string name, float height)
@@ -65,7 +91,7 @@ namespace ZooPark
             base.Name = name;
             base.AnimalHeight = height;
 
-            Console.WriteLine($"I am {base.Name} of type Mammal, I got {base.NumberOfLegs} legs and I'm {base.AnimalHeight} cms");
+            //Console.WriteLine($"I am {base.Name} of type Mammal, I got {base.NumberOfLegs} legs and I'm {base.AnimalHeight} cms");
         }
 
         public override void Eat()
