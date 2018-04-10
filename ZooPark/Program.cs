@@ -181,6 +181,7 @@ namespace ZooPark.world
                     
                     else if (herbivoreAnimals.Count <= 0)
                     {
+
                         Console.WriteLine("\nAll herbivores are dead and carnivore animals are starving");
 
                         Console.Write("\nAll herbivores are dead, do the ZOO still provide food (Y/N): ");
