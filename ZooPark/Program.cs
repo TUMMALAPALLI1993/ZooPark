@@ -37,7 +37,7 @@ namespace ZooPark.world
             zoo.Add(new Owl());
             zoo.Add(new Parrot());
 
-            //Console.WriteLine(zoo[1].GetType());
+            //Console.WriteLine(zoo[1].GetType().BaseType);
 
             int numberOfMammals = 0; int numberOfReptiles = 0; int numberOfBirds = 0;
 
@@ -47,17 +47,17 @@ namespace ZooPark.world
 
                 //compare list tye to class type
 
-                if (zoo[i].GetType() == typeof(Mammal))
+                if (zoo[i].GetType().BaseType == typeof(Mammal))
                 {
                     numberOfMammals++;
                 }
 
-                else if (zoo[i].GetType() == typeof(Reptiles))
+                else if (zoo[i].GetType().BaseType == typeof(Reptiles))
                 {
                     numberOfReptiles++;
                 }
 
-                else if (zoo[i].GetType() == typeof(Reptiles))
+                else if (zoo[i].GetType().BaseType == typeof(Bird))
                 {
                     numberOfBirds++;
                 }
